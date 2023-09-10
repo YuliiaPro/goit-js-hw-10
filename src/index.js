@@ -12,6 +12,12 @@ const refs = {
     error: document.querySelector('.error'),
 } 
 
+refs.breedSelect.style.width = "500px";
+refs.breedSelect.style.padding = "0 20px";
+refs.breedSelect.style.marginTop = "20px";
+refs.breedSelect.style.marginLeft = "20px";
+refs.breedSelect.style.fontWeight = "500";
+
 fetchBreeds()
 .then((data) => {
 createOptions(data);
@@ -37,6 +43,7 @@ function createOptions(data) {
     }
     refs.breedSelect.classList.remove("is-hidden");
 }
+
 
 function onSearch(e) {
     e.preventDefault();
