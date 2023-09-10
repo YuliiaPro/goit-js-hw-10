@@ -1,2 +1,90 @@
 @import './common';
 @import './example';
+
+// loader------------------------------------------------------
+.loader {
+    width: 20px;
+    height: 4px;
+    display: block;
+    margin: auto;
+    position: relative;
+    border-radius: 4px;
+    color: #292727;
+    background: currentColor;
+    box-sizing: border-box;
+    animation: animloader 0.6s 0.3s ease infinite alternate;
+    top: 20px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+}
+
+.loader::after,
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    width: 20px;
+    height: 4px;
+    background: currentColor;
+    position: absolute;
+    border-radius: 4px;
+    top: 0;
+    right: 110%;
+    animation: animloader 0.6s ease infinite alternate;
+}
+
+.loader::after {
+    left: 110%;
+    right: auto;
+    animation-delay: 0.6s;
+}
+
+@keyframes animloader {
+    0% {
+        width: 20px;
+    }
+
+    100% {
+        width: 48px;
+    }
+}
+    
+// loader============================================
+
+.is-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.cat-info {
+display: flex;
+padding: 20px;
+}
+
+.card-img{
+    margin-right: 20px;
+}
+.card-name{
+    margin: 0;
+    padding: 0;
+}
+
+.breed-select{
+width: 500;
+padding: 0 20px;
+margin-top: 20px;
+margin-left: 20px;
+font-weight: 500;
+}
+.cat-temperament-span{
+font-weight: 500;
+}
